@@ -17,12 +17,12 @@ finalroll = nums.zip(werollin.rolls)
 
 
 def roll(arr)
-  arr.map do |(x,y)|
-    vals = y.times {x.sample}
-    print "#{vals}
-"
-    #this removes the excess array with the elements used up by .map
-    #format the output
+  arr.each do |x,y|
+   vals=[]
+    y.times {
+      vals << x.sample
+   }
+    puts "#{vals}"
   end
 end 
 
