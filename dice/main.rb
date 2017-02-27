@@ -9,18 +9,21 @@ if werollin.input.count % 2 != 0
 end
 
 werollin.countdice
-dice = werollin.match
-rolls = werollin.countrolls
+nums = werollin.match
+werollin.countrolls
 
 #split arrays into pairs to be rolled
-finalroll = dice.zip(rolls)
+finalroll = nums.zip(werollin.rolls)
 
- # def roll(arr)
- #   result=[]
- #   arr.each do |(x,y)|
- #      result << y.times x.sample
- #     puts result
- #   end
- # end
 
- roll(finalroll)
+def roll(arr)
+  arr.map do |(x,y)|
+    vals = y.times {x.sample}
+    print "#{vals}
+"
+    #this removes the excess array with the elements used up by .map
+    #format the output
+  end
+end 
+
+roll(finalroll)

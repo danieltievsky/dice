@@ -20,26 +20,27 @@ module Dice
     end
 
     # use each even element as die of x sides, place into array "dicekeys"
-    def countdice(input)
-      for i in input
+    def countdice
+      @input.each do |i|
         if @input.index(i) % 2 == 0
-          dicekeys.push
+          @dicekeys << i
         end
       end
     end
 
     # match elements in dicekeys to values in hash DICESIDES
-    def match(dicekeys)
-      dicekeys.map { |i| DICESIDES[i] }
+    def match
+      @dicekeys.map { |i| DICESIDES[i] }
     end
 
     # use each odd element as number of rolls, place into another array
     def countrolls
-      for i in @input
-        if @input[i].index % 2 == 1
-          @rolls.push
+      @input.each do |i|
+        if @input.index(i) % 2 == 1
+          @rolls << i.to_i
         end
       end
     end
+
   end
 end
